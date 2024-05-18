@@ -1,26 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace WheelOfFortune.Wheel
+namespace CriticalStrike.WheelOfFortune.Wheel
 {
     [HelpURL("https://www.youtube.com/watch?v=eti87kSD_9U")] // Refactored the code in the video.
     [RequireComponent(typeof(Rigidbody2D))]
-    public class Roulette : MonoBehaviour
+    public class WheelOfFortune : MonoBehaviour
     {
         private const int WheelSlotCount = 8; // Made it a constant since the visual asset has 8 slots.
-        
+
+        [Header("Settings")]
         [Range(200, 1440)] [SerializeField] private float rotatePower = 1200; // Not recommended to make it more than 1440, rotates too much.
-        [Range(0, 50)] [SerializeField] private float rotatePowerRandomnessPercentage;
+        [Range(0, 50)] [SerializeField] private float rotatePowerRandomnessPercentage = 30;
         [Range(100, 600)] [SerializeField] private float stopPower = 200;
         [Range(0.1f, 1f)] [SerializeField] private float stopWaitTime = 0.3f;
-    
+
+        #region Variables
+
         private bool _isRotating;
         private float _stopTimer;
-        
+
+        #endregion
+
+        #region Dependencies
+
         private Rigidbody2D _rigidbody2D;
+
+        #endregion
         
         private void Awake()
         {
@@ -28,6 +34,11 @@ namespace WheelOfFortune.Wheel
         }
     
         private void Update()
+        {
+            HandleRotating();
+        }
+
+        private void HandleRotating()
         {
             if (!_isRotating)
                 return;
@@ -77,7 +88,6 @@ namespace WheelOfFortune.Wheel
             _stopTimer = 0;
         }
         
-        // TODO: Refactor to check it more elegantly.
         public void HandleLanding()
         {
             float slotGap = 360 / ((float)WheelSlotCount * 2);
@@ -105,6 +115,7 @@ namespace WheelOfFortune.Wheel
             }
         }
         
+        // TODO: Add more logic here.
         public void HandlePrize(int slot)
         {
             Debug.Log(slot);
