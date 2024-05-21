@@ -1,13 +1,12 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using CriticalStrike.WheelOfFortune.Core;
-using CriticalStrike.WheelOfFortune.Misc;
-using CriticalStrike.WheelOfFortune.Zone;
+using CriticalStrike.WheelOfFortuneMiniGame.Core;
+using CriticalStrike.WheelOfFortuneMiniGame.Misc;
+using CriticalStrike.WheelOfFortuneMiniGame.Zone;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace CriticalStrike.WheelOfFortune.Item
+namespace CriticalStrike.WheelOfFortuneMiniGame.Item
 {
     [HelpURL("https://chatgpt.com/share/2631bfed-4f77-497d-aeb4-d498f5647f47")] // I know how to implement a weight based probability system but didn't want to code it from scratch.
     public class RewardGenerator : SingletonMonoBehaviour<RewardGenerator>
@@ -17,9 +16,9 @@ namespace CriticalStrike.WheelOfFortune.Item
         [SerializeField] private List<CardItemBase> allItems;
 
         [Header("Settings")] 
-        [Range(0, 50)] [SerializeField] private int randomnessPercentage;
+        [Range(0, 50)] [SerializeField] private int randomnessPercentage = 30;
         
-        public Wheel.WheelOfFortune.Reward GenerateRandomReward()
+        public Reward GenerateRandomReward()
         {
             CardItemBase item = SelectRandomItem(ZoneManager.Instance.GetCurrentZoneType());
             
@@ -32,7 +31,7 @@ namespace CriticalStrike.WheelOfFortune.Item
 
             #endregion
             
-            Wheel.WheelOfFortune.Reward reward = new Wheel.WheelOfFortune.Reward
+            Reward reward = new Reward
             {
                 Item = item,
                 Quantity = quantity
@@ -40,8 +39,8 @@ namespace CriticalStrike.WheelOfFortune.Item
 
             return reward;
         }
-        
-        public CardItemBase SelectRandomItem(Enums.ZoneType zoneType)
+
+        private CardItemBase SelectRandomItem(Enums.ZoneType zoneType)
         {
             float totalWeight = 0;
             foreach (var card in allItems)
@@ -65,7 +64,7 @@ namespace CriticalStrike.WheelOfFortune.Item
             return allItems[allItems.Count - 1];
         }
 
-        private float GetWeightByZone(CardItemBase card, Enums.ZoneType zoneType)
+        private static float GetWeightByZone(CardItemBase card, Enums.ZoneType zoneType)
         {
             switch (zoneType)
             {
@@ -80,9 +79,9 @@ namespace CriticalStrike.WheelOfFortune.Item
             }
         }
 
-        public Wheel.WheelOfFortune.Reward GetDeathReward()
+        public Reward GetDeathReward()
         {
-            return new Wheel.WheelOfFortune.Reward
+            return new Reward
             {
                 Item = deathItem,
                 Quantity = 0

@@ -1,14 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using CriticalStrike.WheelOfFortune.Events;
-using CriticalStrike.WheelOfFortune.Item;
-using CriticalStrike.WheelOfFortune.Misc;
-using CriticalStrike.WheelOfFortune.UI;
-using CriticalStrike.WheelOfFortune.Zone;
+using CriticalStrike.WheelOfFortuneMiniGame.Events;
+using CriticalStrike.WheelOfFortuneMiniGame.Item;
+using CriticalStrike.WheelOfFortuneMiniGame.Misc;
+using CriticalStrike.WheelOfFortuneMiniGame.UI;
+using CriticalStrike.WheelOfFortuneMiniGame.Wheel;
+using CriticalStrike.WheelOfFortuneMiniGame.Zone;
 using UnityEngine;
 
-namespace CriticalStrike.WheelOfFortune.Core
+namespace CriticalStrike.WheelOfFortuneMiniGame.Core
 {
     public class GameManager : SingletonMonoBehaviour<GameManager>
     {
@@ -26,7 +24,7 @@ namespace CriticalStrike.WheelOfFortune.Core
 
         private void HandleSpinEnd()
         {
-            WheelOfFortune.Wheel.WheelOfFortune.Instance.HandleLanding();
+            WheelOfFortune.Instance.HandleLanding();
         }
 
         public void HandleGameState()

@@ -1,16 +1,14 @@
-using System;
-using System.Collections.Generic;
-using CriticalStrike.WheelOfFortune.Core;
-using CriticalStrike.WheelOfFortune.Events;
-using CriticalStrike.WheelOfFortune.Item;
-using CriticalStrike.WheelOfFortune.Misc;
-using CriticalStrike.WheelOfFortune.UI;
-using CriticalStrike.WheelOfFortune.Zone;
+using CriticalStrike.WheelOfFortuneMiniGame.Core;
+using CriticalStrike.WheelOfFortuneMiniGame.Events;
+using CriticalStrike.WheelOfFortuneMiniGame.Item;
+using CriticalStrike.WheelOfFortuneMiniGame.Misc;
+using CriticalStrike.WheelOfFortuneMiniGame.UI;
+using CriticalStrike.WheelOfFortuneMiniGame.Zone;
 using DG.Tweening;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace CriticalStrike.WheelOfFortune.Wheel
+namespace CriticalStrike.WheelOfFortuneMiniGame.Wheel
 {
     [HelpURL("https://www.youtube.com/watch?v=eti87kSD_9U")] // Refactored and improved the code in the video.
     [RequireComponent(typeof(Rigidbody2D))]
@@ -172,8 +170,8 @@ namespace CriticalStrike.WheelOfFortune.Wheel
                 }
             }
         }
-        
-        public void HandlePrize(int slot)
+
+        private void HandlePrize(int slot)
         {
             Debug.Log(slot);
             PlayerInventory.Instance.AddToInventory(_wheelSlots[slot].GetCurrentReward());
@@ -182,13 +180,6 @@ namespace CriticalStrike.WheelOfFortune.Wheel
         public bool IsRotating()
         {
             return _isRotating;
-        }
-        
-        [Serializable]
-        public struct Reward
-        {
-            public CardItemBase Item;
-            public int Quantity;
         }
     }
 }

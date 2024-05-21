@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using CriticalStrike.WheelOfFortune.Core;
+using CriticalStrike.WheelOfFortuneMiniGame.Core;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CriticalStrike.WheelOfFortune.UI
+namespace CriticalStrike.WheelOfFortuneMiniGame.UI
 {
     public class RestartButton : MonoBehaviour
     {
@@ -20,7 +18,7 @@ namespace CriticalStrike.WheelOfFortune.UI
             _button.onClick.AddListener(Restart);
         }
 
-        private void Restart()
+        private static void Restart()
         {
             GameManager.Instance.ResetGame();
         }

@@ -1,14 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using CriticalStrike.WheelOfFortune.Core;
-using CriticalStrike.WheelOfFortune.Events;
-using CriticalStrike.WheelOfFortune.Wheel;
-using CriticalStrike.WheelOfFortune.Zone;
+using CriticalStrike.WheelOfFortuneMiniGame.Core;
+using CriticalStrike.WheelOfFortuneMiniGame.Zone;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CriticalStrike.WheelOfFortune.UI
+namespace CriticalStrike.WheelOfFortuneMiniGame.UI
 {
     public class ExitButton : MonoBehaviour
     {
@@ -24,7 +19,7 @@ namespace CriticalStrike.WheelOfFortune.UI
             _button.onClick.AddListener(Exit);
         }
 
-        private void Exit()
+        private static void Exit()
         {
             if ( !Wheel.WheelOfFortune.Instance.IsRotating() &&
                  (ZoneManager.Instance.GetCurrentZoneType() == Enums.ZoneType.Safe || ZoneManager.Instance.GetCurrentZoneType() == Enums.ZoneType.Super))

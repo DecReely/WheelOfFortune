@@ -1,13 +1,10 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using CriticalStrike.WheelOfFortune.Item;
+using CriticalStrike.WheelOfFortuneMiniGame.Item;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Random = UnityEngine.Random;
 
-namespace CriticalStrike.WheelOfFortune.UI
+namespace CriticalStrike.WheelOfFortuneMiniGame.UI
 {
     [ExecuteInEditMode]
     public class WheelUISlot : MonoBehaviour
@@ -15,7 +12,7 @@ namespace CriticalStrike.WheelOfFortune.UI
         private Image _icon;
         private TextMeshProUGUI _quantityText;
         
-        [SerializeField] private Wheel.WheelOfFortune.Reward _currentReward;
+        [SerializeField] private Reward currentReward; // Left it serialized to make it changeable from editor.
 
         private void Awake()
         {
@@ -27,20 +24,20 @@ namespace CriticalStrike.WheelOfFortune.UI
         {
             ValidateReward();
             
-            SetCurrentReward(_currentReward);
+            SetCurrentReward(currentReward);
         }
 
         private void ValidateReward()
         {
-            if (_currentReward.Quantity < 0)
+            if (currentReward.Quantity < 0)
             {
-                int quantity = Math.Clamp(_currentReward.Quantity, 0, int.MaxValue);
+                int quantity = Math.Clamp(currentReward.Quantity, 0, int.MaxValue);
                 
-                _currentReward.Quantity = quantity;
+                currentReward.Quantity = quantity;
             }
         }
 
-        private void FillSlot(Wheel.WheelOfFortune.Reward reward)
+        private void FillSlot(Reward reward)
         {
             if (reward.Item == null)
                 return;
@@ -61,16 +58,16 @@ namespace CriticalStrike.WheelOfFortune.UI
             }
         }
 
-        public void SetCurrentReward(Wheel.WheelOfFortune.Reward reward)
+        public void SetCurrentReward(Reward reward)
         {
-            _currentReward = reward;
+            currentReward = reward;
 
-            FillSlot(_currentReward);
+            FillSlot(currentReward);
         }
 
-        public Wheel.WheelOfFortune.Reward GetCurrentReward()
+        public Reward GetCurrentReward()
         {
-            return _currentReward;
+            return currentReward;
         }
     }
 }

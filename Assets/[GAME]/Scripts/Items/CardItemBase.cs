@@ -1,7 +1,7 @@
-using CriticalStrike.WheelOfFortune.Core;
+using CriticalStrike.WheelOfFortuneMiniGame.Core;
 using UnityEngine;
 
-namespace CriticalStrike.WheelOfFortune.Item
+namespace CriticalStrike.WheelOfFortuneMiniGame.Item
 {
     [CreateAssetMenu(menuName = "Scriptable Objects/Card Item Base")]
     public class CardItemBase : ScriptableObject

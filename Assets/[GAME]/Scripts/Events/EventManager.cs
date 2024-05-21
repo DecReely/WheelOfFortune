@@ -1,6 +1,6 @@
 using System;
 
-namespace CriticalStrike.WheelOfFortune.Events
+namespace CriticalStrike.WheelOfFortuneMiniGame.Events
 {
     public static class EventManager
     {

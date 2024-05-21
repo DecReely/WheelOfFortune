@@ -1,13 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using CriticalStrike.WheelOfFortune.Events;
-using CriticalStrike.WheelOfFortune.Item;
-using CriticalStrike.WheelOfFortune.Misc;
-using CriticalStrike.WheelOfFortune.UI;
-using UnityEngine;
+using CriticalStrike.WheelOfFortuneMiniGame.Events;
+using CriticalStrike.WheelOfFortuneMiniGame.Misc;
 
-namespace CriticalStrike.WheelOfFortune.UI
+namespace CriticalStrike.WheelOfFortuneMiniGame.UI
 {
     public class UIManager : SingletonMonoBehaviour<UIManager>
     {

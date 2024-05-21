@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-namespace CriticalStrike.WheelOfFortune.UI
+namespace CriticalStrike.WheelOfFortuneMiniGame.UI
 {
     public class WinLoseUIManager : MonoBehaviour
     {

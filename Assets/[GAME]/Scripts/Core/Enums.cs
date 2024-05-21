@@ -1,8 +1,7 @@
-namespace CriticalStrike.WheelOfFortune.Core
+namespace CriticalStrike.WheelOfFortuneMiniGame.Core
 {
     public static class Enums
     {
-
         public enum ZoneType
         {
             Normal,
@@ -10,7 +9,7 @@ namespace CriticalStrike.WheelOfFortune.Core
             Super
         }
         
-        public enum ItemType
+        public enum ItemType // Can insert new items in spaces left without breaking existing ones.
         {
             Bomb = 0,
             

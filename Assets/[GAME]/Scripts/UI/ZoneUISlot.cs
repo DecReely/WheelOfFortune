@@ -1,13 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using CriticalStrike.WheelOfFortune.Core;
-using CriticalStrike.WheelOfFortune.Zone;
+using CriticalStrike.WheelOfFortuneMiniGame.Core;
+using CriticalStrike.WheelOfFortuneMiniGame.Zone;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CriticalStrike.WheelOfFortune.UI
+namespace CriticalStrike.WheelOfFortuneMiniGame.UI
 {
     public class ZoneUISlot : MonoBehaviour
     {
@@ -24,7 +21,6 @@ namespace CriticalStrike.WheelOfFortune.UI
         [SerializeField] private Sprite superZoneBackground;
         [SerializeField] private Sprite currentZoneBorderSprite;
         [SerializeField] private Sprite nonCurrentZoneBorderSprite;
-    
         
         // May add text color variations for different zone types here.
     

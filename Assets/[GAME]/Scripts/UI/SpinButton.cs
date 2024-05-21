@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using CriticalStrike.WheelOfFortune.Core;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CriticalStrike.WheelOfFortune.UI
+namespace CriticalStrike.WheelOfFortuneMiniGame.UI
 {
     public class SpinButton : MonoBehaviour
     {
@@ -20,7 +17,7 @@ namespace CriticalStrike.WheelOfFortune.UI
             _button.onClick.AddListener(Spin);
         }
 
-        private void Spin()
+        private static void Spin()
         {
             Wheel.WheelOfFortune.Instance.Rotate();
         }

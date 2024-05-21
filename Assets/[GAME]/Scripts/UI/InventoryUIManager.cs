@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using CriticalStrike.WheelOfFortune.Item;
-using CriticalStrike.WheelOfFortune.UI;
-using Unity.VisualScripting;
+using CriticalStrike.WheelOfFortuneMiniGame.Item;
 using UnityEngine;
 
-namespace CriticalStrike.WheelOfFortune.UI
+namespace CriticalStrike.WheelOfFortuneMiniGame.UI
 {
     public class InventoryUIManager : MonoBehaviour
     {

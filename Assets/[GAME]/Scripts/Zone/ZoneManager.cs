@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using CriticalStrike.WheelOfFortune.Core;
-using CriticalStrike.WheelOfFortune.Events;
-using CriticalStrike.WheelOfFortune.Misc;
-using CriticalStrike.WheelOfFortune.Wheel;
-using UnityEngine;
+using CriticalStrike.WheelOfFortuneMiniGame.Core;
+using CriticalStrike.WheelOfFortuneMiniGame.Events;
+using CriticalStrike.WheelOfFortuneMiniGame.Misc;
+using CriticalStrike.WheelOfFortuneMiniGame.Wheel;
 
-namespace CriticalStrike.WheelOfFortune.Zone
+namespace CriticalStrike.WheelOfFortuneMiniGame.Zone
 {
     public class ZoneManager : SingletonMonoBehaviour<ZoneManager>
     {
@@ -22,7 +19,7 @@ namespace CriticalStrike.WheelOfFortune.Zone
         {
             _currentZone++;
             
-            WheelOfFortune.Wheel.WheelOfFortune.Instance.RandomizeSlotRewards();
+            WheelOfFortune.Instance.RandomizeSlotRewards();
             
             EventManager.CallUpdateUIEvent();
         }
@@ -31,7 +28,7 @@ namespace CriticalStrike.WheelOfFortune.Zone
         {
             _currentZone = 1;
             
-            WheelOfFortune.Wheel.WheelOfFortune.Instance.RandomizeSlotRewards();
+            WheelOfFortune.Instance.RandomizeSlotRewards();
             
             EventManager.CallUpdateUIEvent();
         }
