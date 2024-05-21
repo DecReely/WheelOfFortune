@@ -742,6 +742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winPanel: {fileID: 208044072}
   losePanel: {fileID: 168718359}
+  animationDuration: 0.5
 --- !u!114 &1742376982 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1044291710971306815, guid: 224c55fec374c5a4aba4edcd8a716c88,
@@ -953,11 +954,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1591118712}
     m_Modifications:
-    - target: {fileID: 397988754829202062, guid: 2fe0ca281f7684345b53b4149abe5214,
-        type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3164617898063437544, guid: 2fe0ca281f7684345b53b4149abe5214,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1058,20 +1054,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5416321378392891155, guid: 2fe0ca281f7684345b53b4149abe5214,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 46522337}
     - target: {fileID: 6030442275314835485, guid: 2fe0ca281f7684345b53b4149abe5214,
         type: 3}
       propertyPath: m_Name
       value: Game Won Panel
-      objectReference: {fileID: 0}
-    - target: {fileID: 6404215455563713445, guid: 2fe0ca281f7684345b53b4149abe5214,
-        type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1086,11 +1072,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1591118712}
     m_Modifications:
-    - target: {fileID: 1752515624376794855, guid: fa7c79145c9813e4696385eb2826bf76,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 46522337}
     - target: {fileID: 6382587664629641972, guid: fa7c79145c9813e4696385eb2826bf76,
         type: 3}
       propertyPath: m_Pivot.x

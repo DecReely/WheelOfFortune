@@ -8,30 +8,33 @@ using CriticalStrike.WheelOfFortune.Zone;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ExitButton : MonoBehaviour
+namespace CriticalStrike.WheelOfFortune.UI
 {
-    private Button _button;
+    public class ExitButton : MonoBehaviour
+    {
+        private Button _button;
     
-    private void Awake()
-    {
-        _button = GetComponent<Button>();
-    }
-
-    private void Start()
-    {
-        _button.onClick.AddListener(Exit);
-    }
-
-    private void Exit()
-    {
-        if ( !WheelOfFortune.Instance.IsRotating() &&
-            (ZoneManager.Instance.GetCurrentZoneType() == Enums.ZoneType.Safe || ZoneManager.Instance.GetCurrentZoneType() == Enums.ZoneType.Super))
+        private void Awake()
         {
-            GameManager.Instance.HandleGameWin();
+            _button = GetComponent<Button>();
         }
-        else
+
+        private void Start()
         {
-            // TODO: Implement tooltip here.
+            _button.onClick.AddListener(Exit);
+        }
+
+        private void Exit()
+        {
+            if ( !Wheel.WheelOfFortune.Instance.IsRotating() &&
+                 (ZoneManager.Instance.GetCurrentZoneType() == Enums.ZoneType.Safe || ZoneManager.Instance.GetCurrentZoneType() == Enums.ZoneType.Super))
+            {
+                GameManager.Instance.HandleGameWin();
+            }
+            else
+            {
+                // TODO: Implement tooltip here.
+            }
         }
     }
 }
