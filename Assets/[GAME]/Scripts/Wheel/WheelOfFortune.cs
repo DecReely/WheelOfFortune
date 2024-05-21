@@ -1,11 +1,20 @@
+using System;
+using System.Collections.Generic;
+using CriticalStrike.WheelOfFortune.Core;
+using CriticalStrike.WheelOfFortune.Events;
+using CriticalStrike.WheelOfFortune.Item;
+using CriticalStrike.WheelOfFortune.Misc;
+using CriticalStrike.WheelOfFortune.UI;
+using CriticalStrike.WheelOfFortune.Zone;
 using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace CriticalStrike.WheelOfFortune.Wheel
 {
-    [HelpURL("https://www.youtube.com/watch?v=eti87kSD_9U")] // Refactored the code in the video.
+    [HelpURL("https://www.youtube.com/watch?v=eti87kSD_9U")] // Refactored and improved the code in the video.
     [RequireComponent(typeof(Rigidbody2D))]
-    public class WheelOfFortune : MonoBehaviour
+    public class WheelOfFortune : SingletonMonoBehaviour<WheelOfFortune>
     {
         private const int WheelSlotCount = 8; // Made it a constant since the visual asset has 8 slots.
 
@@ -17,6 +26,7 @@ namespace CriticalStrike.WheelOfFortune.Wheel
 
         #region Variables
 
+        private WheelUISlot[] _wheelSlots;
         private bool _isRotating;
         private float _stopTimer;
 
@@ -28,14 +38,56 @@ namespace CriticalStrike.WheelOfFortune.Wheel
 
         #endregion
         
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
+            
             _rigidbody2D = GetComponent<Rigidbody2D>();
+
+            _wheelSlots = GetComponentsInChildren<WheelUISlot>();
         }
-    
+
+        private void Start()
+        {
+            RandomizeSlotRewards();
+        }
+
         private void Update()
         {
             HandleRotating();
+        }
+
+        public void RandomizeSlotRewards()
+        {
+            if (ZoneManager.Instance.GetCurrentZoneType() == Enums.ZoneType.Normal)
+            {
+                #region Assign Death Slot
+
+                int deathSlotIndex = Random.Range(0, WheelSlotCount);
+            
+                _wheelSlots[deathSlotIndex].SetCurrentReward(RewardGenerator.Instance.GetDeathReward());
+
+                #endregion
+
+                #region Assign Rest Of The Slots
+
+                for (int i = 0; i < WheelSlotCount; i++)
+                {
+                    if (i != deathSlotIndex)
+                    {
+                        _wheelSlots[i].SetCurrentReward(RewardGenerator.Instance.GenerateRandomReward());
+                    }
+                }
+
+                #endregion
+            }
+            else
+            {
+                for (int i = 0; i < WheelSlotCount; i++)
+                {
+                    _wheelSlots[i].SetCurrentReward(RewardGenerator.Instance.GenerateRandomReward());
+                }
+            }
         }
 
         private void HandleRotating()
@@ -53,18 +105,16 @@ namespace CriticalStrike.WheelOfFortune.Wheel
                 
                 if(_stopTimer >= stopWaitTime)
                 {
-                    HandleLanding();
-    
-                    StopRotating();
+                    EventManager.CallSpinEndedEvent();
                 }
             }
         }
         
         public void Rotate()
         {
-            if (_isRotating)
+            if (_isRotating || ZoneManager.Instance.HasExceededMaxLevel() || GameManager.Instance.IsGameEnded())
             {
-                Debug.LogError("Wheel is already spinning!");
+                Debug.LogError("Wheel can't be spun!");
                 return;
             }
     
@@ -97,28 +147,48 @@ namespace CriticalStrike.WheelOfFortune.Wheel
             {
                 float slotAngle = i * (360 / (float)WheelSlotCount);
     
-                if (rotation >= 360 - slotGap) // Covering edge case where it lands on left of 0.
+                if (rotation >= 360 - slotGap) // Covering edge case where it lands on the left side of 0.
                 {
-                    transform.DORotate(Vector3.zero, stopWaitTime);
+                    transform.DORotate(new Vector3(0,0,0), stopWaitTime).OnComplete(GameManager.Instance.HandleGameState);
                     
                     HandlePrize(0);
+                    
+                    StopRotating();
+
+                    break;
                 }
                 else
                 {
                     if (rotation >= (slotAngle - slotGap) % 360 && rotation <= (slotAngle + slotGap) % 360)
                     {
-                        transform.DORotate(new Vector3(0,0,slotAngle), stopWaitTime);
+                        transform.DORotate(new Vector3(0,0,slotAngle), stopWaitTime).OnComplete(GameManager.Instance.HandleGameState);
                         
                         HandlePrize(i);
+                        
+                        StopRotating();
+
+                        break;
                     }
                 }
             }
         }
         
-        // TODO: Add more logic here.
         public void HandlePrize(int slot)
         {
             Debug.Log(slot);
+            PlayerInventory.Instance.AddToInventory(_wheelSlots[slot].GetCurrentReward());
+        }
+
+        public bool IsRotating()
+        {
+            return _isRotating;
+        }
+        
+        [Serializable]
+        public struct Reward
+        {
+            public CardItemBase Item;
+            public int Quantity;
         }
     }
 }
