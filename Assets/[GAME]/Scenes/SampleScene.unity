@@ -834,7 +834,7 @@ PrefabInstance:
     - target: {fileID: 3222256381985624404, guid: 224c55fec374c5a4aba4edcd8a716c88,
         type: 3}
       propertyPath: m_Name
-      value: Main Game Panel
+      value: UI_Panel_MainGame
       objectReference: {fileID: 0}
     - target: {fileID: 5360284991399072437, guid: 224c55fec374c5a4aba4edcd8a716c88,
         type: 3}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3158169719851980482}
   - component: {fileID: 1403471487451174354}
   m_Layer: 5
-  m_Name: Content
+  m_Name: UI_Content_Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 7745092098402055675}
   - component: {fileID: 3602322838167492350}
   m_Layer: 5
-  m_Name: Viewport
+  m_Name: UI_Viewport_Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 881047230107812372}
   - component: {fileID: 2183533583089356813}
   m_Layer: 5
-  m_Name: Viewport
+  m_Name: UI_Viewport_Inventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -259,7 +259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6208675373483187232}
   m_Layer: 5
-  m_Name: Roulette
+  m_Name: UI_Panel_Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 4745940625560087731}
   - component: {fileID: 2008382487900655560}
   m_Layer: 5
-  m_Name: Wheel
+  m_Name: UI_Image_Wheel_value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 8737554136204205820}
   - component: {fileID: 2166369622210330481}
   m_Layer: 5
-  m_Name: Main Game Panel
+  m_Name: UI_Panel_MainGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -505,7 +505,7 @@ GameObject:
   - component: {fileID: 232642019525579079}
   - component: {fileID: 1044291710971306815}
   m_Layer: 5
-  m_Name: Indicator
+  m_Name: UI_Image_Indicator_value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -582,7 +582,7 @@ GameObject:
   - component: {fileID: 1637344028420489352}
   - component: {fileID: 2820671122401303534}
   m_Layer: 5
-  m_Name: Spin Button
+  m_Name: UI_Button_Spin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -713,7 +713,7 @@ GameObject:
   - component: {fileID: 6010439924333180826}
   - component: {fileID: 8068070700541188735}
   m_Layer: 5
-  m_Name: Content
+  m_Name: UI_Content_Inventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -791,7 +791,7 @@ GameObject:
   - component: {fileID: 2969741287109221380}
   - component: {fileID: 1170685362886528678}
   m_Layer: 5
-  m_Name: Scroll View
+  m_Name: UI_ScrollView_Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -897,7 +897,7 @@ GameObject:
   - component: {fileID: 8747594718366888252}
   - component: {fileID: 2763920908853059837}
   m_Layer: 5
-  m_Name: Indicator
+  m_Name: UI_Image_Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -972,7 +972,7 @@ GameObject:
   - component: {fileID: 6808294343451500095}
   - component: {fileID: 5751744350747954705}
   m_Layer: 5
-  m_Name: Zone Panel
+  m_Name: UI_Panel_Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1049,7 +1049,7 @@ GameObject:
   - component: {fileID: 2054760201511390801}
   - component: {fileID: 8236546731411868944}
   m_Layer: 5
-  m_Name: Top Title
+  m_Name: UI_Text_Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1184,7 +1184,7 @@ GameObject:
   - component: {fileID: 7967163285676268019}
   - component: {fileID: 8332692483222806966}
   m_Layer: 5
-  m_Name: Roulette Panel
+  m_Name: UI_Panel_Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1262,7 +1262,7 @@ GameObject:
   - component: {fileID: 1289293968120190782}
   - component: {fileID: 1861089685166982470}
   m_Layer: 5
-  m_Name: Inventory Panel
+  m_Name: UI_Panel_Inventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1475,7 +1475,7 @@ GameObject:
   - component: {fileID: 4376231531117165783}
   - component: {fileID: 4138749861046577349}
   m_Layer: 5
-  m_Name: Exit Button
+  m_Name: UI_Button_Spin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1608,7 +1608,7 @@ GameObject:
   - component: {fileID: 3795640346413840211}
   - component: {fileID: 7899199540035473650}
   m_Layer: 5
-  m_Name: Scroll View
+  m_Name: UI_ScrollView_Inventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1813,7 +1813,7 @@ PrefabInstance:
     - target: {fileID: 7467610652368107168, guid: 8090a572d79f9e34bb0e062f612f427f,
         type: 3}
       propertyPath: m_Name
-      value: Slot 7
+      value: UI_Slot_Wheel 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1937,7 +1937,7 @@ PrefabInstance:
     - target: {fileID: 7467610652368107168, guid: 8090a572d79f9e34bb0e062f612f427f,
         type: 3}
       propertyPath: m_Name
-      value: Slot 4
+      value: UI_Slot_Wheel 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2061,7 +2061,7 @@ PrefabInstance:
     - target: {fileID: 7467610652368107168, guid: 8090a572d79f9e34bb0e062f612f427f,
         type: 3}
       propertyPath: m_Name
-      value: Slot 2
+      value: UI_Slot_Wheel 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2117,7 +2117,7 @@ PrefabInstance:
     - target: {fileID: 5500425338156458398, guid: c0b2a5f62f68f0e4d9fac909185192ab,
         type: 3}
       propertyPath: m_Name
-      value: Zone Slot (3)
+      value: UI_Slot_Zone 3
       objectReference: {fileID: 0}
     - target: {fileID: 6278842103746555416, guid: c0b2a5f62f68f0e4d9fac909185192ab,
         type: 3}
@@ -2361,7 +2361,7 @@ PrefabInstance:
     - target: {fileID: 7467610652368107168, guid: 8090a572d79f9e34bb0e062f612f427f,
         type: 3}
       propertyPath: m_Name
-      value: Slot 3
+      value: UI_Slot_Wheel 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2485,7 +2485,7 @@ PrefabInstance:
     - target: {fileID: 7467610652368107168, guid: 8090a572d79f9e34bb0e062f612f427f,
         type: 3}
       propertyPath: m_Name
-      value: Slot 0
+      value: UI_Slot_Wheel 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2609,7 +2609,7 @@ PrefabInstance:
     - target: {fileID: 7467610652368107168, guid: 8090a572d79f9e34bb0e062f612f427f,
         type: 3}
       propertyPath: m_Name
-      value: Slot 6
+      value: UI_Slot_Wheel 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2633,7 +2633,7 @@ PrefabInstance:
     - target: {fileID: 5500425338156458398, guid: c0b2a5f62f68f0e4d9fac909185192ab,
         type: 3}
       propertyPath: m_Name
-      value: Zone Slot (1)
+      value: UI_Slot_Zone 1
       objectReference: {fileID: 0}
     - target: {fileID: 6278842103746555416, guid: c0b2a5f62f68f0e4d9fac909185192ab,
         type: 3}
@@ -2857,7 +2857,7 @@ PrefabInstance:
     - target: {fileID: 7467610652368107168, guid: 8090a572d79f9e34bb0e062f612f427f,
         type: 3}
       propertyPath: m_Name
-      value: Slot 1
+      value: UI_Slot_Wheel 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2881,7 +2881,7 @@ PrefabInstance:
     - target: {fileID: 5500425338156458398, guid: c0b2a5f62f68f0e4d9fac909185192ab,
         type: 3}
       propertyPath: m_Name
-      value: Zone Slot (4)
+      value: UI_Slot_Zone 4
       objectReference: {fileID: 0}
     - target: {fileID: 6278842103746555416, guid: c0b2a5f62f68f0e4d9fac909185192ab,
         type: 3}
@@ -3005,7 +3005,7 @@ PrefabInstance:
     - target: {fileID: 5500425338156458398, guid: c0b2a5f62f68f0e4d9fac909185192ab,
         type: 3}
       propertyPath: m_Name
-      value: Zone Slot (2)
+      value: UI_Slot_Zone 2
       objectReference: {fileID: 0}
     - target: {fileID: 6278842103746555416, guid: c0b2a5f62f68f0e4d9fac909185192ab,
         type: 3}
@@ -3229,7 +3229,7 @@ PrefabInstance:
     - target: {fileID: 7467610652368107168, guid: 8090a572d79f9e34bb0e062f612f427f,
         type: 3}
       propertyPath: m_Name
-      value: Slot 5
+      value: UI_Slot_Wheel 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3253,7 +3253,7 @@ PrefabInstance:
     - target: {fileID: 5500425338156458398, guid: c0b2a5f62f68f0e4d9fac909185192ab,
         type: 3}
       propertyPath: m_Name
-      value: Zone Slot (6)
+      value: UI_Slot_Zone 6
       objectReference: {fileID: 0}
     - target: {fileID: 5500425338156458398, guid: c0b2a5f62f68f0e4d9fac909185192ab,
         type: 3}
@@ -3382,7 +3382,7 @@ PrefabInstance:
     - target: {fileID: 5500425338156458398, guid: c0b2a5f62f68f0e4d9fac909185192ab,
         type: 3}
       propertyPath: m_Name
-      value: Zone Slot (5)
+      value: UI_Slot_Zone 5
       objectReference: {fileID: 0}
     - target: {fileID: 6278842103746555416, guid: c0b2a5f62f68f0e4d9fac909185192ab,
         type: 3}
@@ -3511,7 +3511,7 @@ PrefabInstance:
     - target: {fileID: 5500425338156458398, guid: c0b2a5f62f68f0e4d9fac909185192ab,
         type: 3}
       propertyPath: m_Name
-      value: Zone Slot
+      value: UI_Slot_Zone 0
       objectReference: {fileID: 0}
     - target: {fileID: 6278842103746555416, guid: c0b2a5f62f68f0e4d9fac909185192ab,
         type: 3}

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5416321378392891155}
   - component: {fileID: 668255955994223668}
   m_Layer: 5
-  m_Name: Restart Button
+  m_Name: UI_Button_Restart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 296910308181044803}
   - component: {fileID: 6404215455563713445}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: UI_Text_Restart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 5103701240539471251}
   - component: {fileID: 397988754829202062}
   m_Layer: 5
-  m_Name: Game Won Text
+  m_Name: UI_Text_GameWon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 5760341790107642621}
   - component: {fileID: 6123566759655575215}
   m_Layer: 5
-  m_Name: Game Won Panel
+  m_Name: UI_Panel_GameWon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
